@@ -11,7 +11,6 @@ class Discriminator(nn.Module):
     the discriminator thinks that the image patch corresponding
     to the grid cell is real
     """
-    
     def __init__(self, im_channels=3,
                  conv_channels=[64, 128, 256],
                  kernels=[4,4,4,4],
