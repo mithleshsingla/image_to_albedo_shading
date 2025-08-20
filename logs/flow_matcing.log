@@ -1,0 +1,1402 @@
+Setting up [LPIPS] perceptual loss: trunk [vgg], v[0.1], spatial [off]
+/home/project/anaconda3/envs/model/lib/python3.11/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/project/anaconda3/envs/model/lib/python3.11/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Loading model from: /home/project/anaconda3/envs/model/lib/python3.11/site-packages/lpips/weights/v0.1/vgg.pth
+Using latent path: latent_output/latent_vectors.h5
+Use H5 latents: True
+train_config: 32
+Image save steps: 3000
+Encoder Parameters: 15,594,112
+Unet Model Parameters: 22,872,592
+Total Parameters: 38,466,704
+Loading VAE model for decoder functionality
+Loading VAE checkpoint from ldr_to_sh/epoch_41_best_autoencoder_model_checkpoint.pth
+VAE loaded successfully
+Using latent path: latent_output/latent_vectors.h5
+Loading latent vectors from latent_output/latent_vectors.h5
+Keys in H5 file: ['latents', 'metadata']
+Found 74618 latent vectors in H5 file with shape (74618, 16, 32, 32)
+Metadata is a group with keys: ['ai_folders', 'frame_nums', 'full_paths', 'relative_paths', 'scene_folders']
+Loaded metadata/ai_folders with 74618 entries
+Loaded metadata/frame_nums with 74618 entries
+Loaded metadata/full_paths with 74618 entries
+Loaded metadata/relative_paths with 74618 entries
+Loaded metadata/scene_folders with 74618 entries
+Loading images from /home/project/dataset/Hyperism/hyperism_ldr_dequantize_linearize_256 with correct nested structure
+Found 74618 image files with pattern 'frame.*_dequantize.exr'
+Attempting to match with ai_folders, scene_folders, and frame_nums metadata
+Matched 74618 images with metadata
+Loaded 67156 matched latent vectors for train
+Total dataset size for train: 67156
+Successfully loaded dataset with latents
+Using latent path: latent_output/latent_vectors.h5
+Loading latent vectors from latent_output/latent_vectors.h5
+Keys in H5 file: ['latents', 'metadata']
+Found 74618 latent vectors in H5 file with shape (74618, 16, 32, 32)
+Metadata is a group with keys: ['ai_folders', 'frame_nums', 'full_paths', 'relative_paths', 'scene_folders']
+Loaded metadata/ai_folders with 74618 entries
+Loaded metadata/frame_nums with 74618 entries
+Loaded metadata/full_paths with 74618 entries
+Loaded metadata/relative_paths with 74618 entries
+Loaded metadata/scene_folders with 74618 entries
+Loading images from /home/project/dataset/Hyperism/hyperism_ldr_dequantize_linearize_256 with correct nested structure
+Found 74618 image files with pattern 'frame.*_dequantize.exr'
+Attempting to match with ai_folders, scene_folders, and frame_nums metadata
+Matched 74618 images with metadata
+Loaded 7462 matched latent vectors for val
+Total dataset size for val: 7462
+Successfully loaded validation dataset with latents
+Keys in H5 file: ['latents', 'metadata']
+Found 74618 latent vectors in H5 file
+Metadata keys: ['ai_folders', 'frame_nums', 'full_paths', 'relative_paths', 'scene_folders']
+Loaded metadata/ai_folders with 74618 entries
+Loaded metadata/frame_nums with 74618 entries
+Loaded metadata/full_paths with 74618 entries
+Loaded metadata/relative_paths with 74618 entries
+Loaded metadata/scene_folders with 74618 entries
+Loading images from /home/project/dataset/Hyperism/hyperism_ldr_albedo_ground_truth_256 with correct nested structure
+Found 74618 image files with pattern 'frame.*.diffuse_reflectance.exr'
+Attempting to match with ai_folders, scene_folders, and frame_nums metadata
+Matched 74618 images with metadata
+Loaded 67156 matched images for train
+Found 67156 images for train in ImageDatasetwv_al
+Keys in H5 file: ['latents', 'metadata']
+Found 74618 latent vectors in H5 file
+Metadata keys: ['ai_folders', 'frame_nums', 'full_paths', 'relative_paths', 'scene_folders']
+Loaded metadata/ai_folders with 74618 entries
+Loaded metadata/frame_nums with 74618 entries
+Loaded metadata/full_paths with 74618 entries
+Loaded metadata/relative_paths with 74618 entries
+Loaded metadata/scene_folders with 74618 entries
+Loading images from /home/project/dataset/Hyperism/hyperism_ldr_albedo_ground_truth_256 with correct nested structure
+Found 74618 image files with pattern 'frame.*.diffuse_reflectance.exr'
+Attempting to match with ai_folders, scene_folders, and frame_nums metadata
+Matched 74618 images with metadata
+Loaded 7462 matched images for val
+Found 7462 images for val in ImageDatasetwv_al
+Keys in H5 file: ['latents', 'metadata']
+Found 74618 latent vectors in H5 file
+Metadata keys: ['ai_folders', 'frame_nums', 'full_paths', 'relative_paths', 'scene_folders']
+Loaded metadata/ai_folders with 74618 entries
+Loaded metadata/frame_nums with 74618 entries
+Loaded metadata/full_paths with 74618 entries
+Loaded metadata/relative_paths with 74618 entries
+Loaded metadata/scene_folders with 74618 entries
+Loading images from /home/project/dataset/Hyperism/hyperism_ldr_dequantize_linearize_256 with correct nested structure
+Found 74618 image files with pattern 'frame.*_dequantize.exr'
+Attempting to match with ai_folders, scene_folders, and frame_nums metadata
+Matched 74618 images with metadata
+Loaded 67156 matched images for train
+Found 67156 images for train in ImageDatasetwv
+Keys in H5 file: ['latents', 'metadata']
+Found 74618 latent vectors in H5 file
+Metadata keys: ['ai_folders', 'frame_nums', 'full_paths', 'relative_paths', 'scene_folders']
+Loaded metadata/ai_folders with 74618 entries
+Loaded metadata/frame_nums with 74618 entries
+Loaded metadata/full_paths with 74618 entries
+Loaded metadata/relative_paths with 74618 entries
+Loaded metadata/scene_folders with 74618 entries
+Loading images from /home/project/dataset/Hyperism/hyperism_ldr_dequantize_linearize_256 with correct nested structure
+Found 74618 image files with pattern 'frame.*_dequantize.exr'
+Attempting to match with ai_folders, scene_folders, and frame_nums metadata
+Matched 74618 images with metadata
+Loaded 7462 matched images for val
+Found 7462 images for val in ImageDatasetwv
+Building index mappings...
+Index mapping sizes:
+  Latent: 67156 valid entries
+  Encoder: 67156 valid entries
+  Albedo: 67156 valid entries
+Key overlaps:
+  Latent ∩ Encoder: 67156
+  Encoder ∩ Albedo: 67140
+  Latent ∩ Albedo: 67140
+  All three: 67140
+CombinedSyncedDataset for train:
+  Found 67140 matching triplets out of:
+    67156 latent vectors
+    67156 encoder images
+    67156 albedo images
+Building index mappings...
+Index mapping sizes:
+  Latent: 7462 valid entries
+  Encoder: 7462 valid entries
+  Albedo: 7462 valid entries
+Key overlaps:
+  Latent ∩ Encoder: 7462
+  Encoder ∩ Albedo: 7446
+  Latent ∩ Albedo: 7446
+  All three: 7446
+CombinedSyncedDataset for val:
+  Found 7446 matching triplets out of:
+    7462 latent vectors
+    7462 encoder images
+    7462 albedo images
+
+=== VERIFYING SYNCHRONIZATION (5 samples) ===
+
+Sample 0:
+  Latent  [ 4871]: ai=ai_001_001, scene=scene_cam_00_final_hdf5, frame=0000
+  Encoder [ 4871]: ai=ai_001_001, scene=scene_cam_00_final_hdf5, frame=0000
+  Albedo  [ 4872]: ai=ai_001_001, scene=scene_cam_00_final_hdf5, frame=0000
+  Match: ✓
+
+Sample 1:
+  Latent  [ 4916]: ai=ai_001_001, scene=scene_cam_00_final_hdf5, frame=0001
+  Encoder [ 4916]: ai=ai_001_001, scene=scene_cam_00_final_hdf5, frame=0001
+  Albedo  [ 4881]: ai=ai_001_001, scene=scene_cam_00_final_hdf5, frame=0001
+  Match: ✓
+
+Sample 2:
+  Latent  [ 4876]: ai=ai_001_001, scene=scene_cam_00_final_hdf5, frame=0002
+  Encoder [ 4876]: ai=ai_001_001, scene=scene_cam_00_final_hdf5, frame=0002
+  Albedo  [ 4870]: ai=ai_001_001, scene=scene_cam_00_final_hdf5, frame=0002
+  Match: ✓
+
+Sample 3:
+  Latent  [ 4928]: ai=ai_001_001, scene=scene_cam_00_final_hdf5, frame=0003
+  Encoder [ 4928]: ai=ai_001_001, scene=scene_cam_00_final_hdf5, frame=0003
+  Albedo  [ 4877]: ai=ai_001_001, scene=scene_cam_00_final_hdf5, frame=0003
+  Match: ✓
+
+Sample 4:
+  Latent  [ 4952]: ai=ai_001_001, scene=scene_cam_00_final_hdf5, frame=0004
+  Encoder [ 4952]: ai=ai_001_001, scene=scene_cam_00_final_hdf5, frame=0004
+  Albedo  [ 4914]: ai=ai_001_001, scene=scene_cam_00_final_hdf5, frame=0004
+  Match: ✓
+
+=== VERIFYING SYNCHRONIZATION (5 samples) ===
+
+Sample 0:
+  Latent  [   68]: ai=ai_001_005, scene=scene_cam_02_final_hdf5, frame=0004
+  Encoder [   68]: ai=ai_001_005, scene=scene_cam_02_final_hdf5, frame=0004
+  Albedo  [   29]: ai=ai_001_005, scene=scene_cam_02_final_hdf5, frame=0004
+  Match: ✓
+
+Sample 1:
+  Latent  [   65]: ai=ai_001_005, scene=scene_cam_02_final_hdf5, frame=0006
+  Encoder [   65]: ai=ai_001_005, scene=scene_cam_02_final_hdf5, frame=0006
+  Albedo  [   34]: ai=ai_001_005, scene=scene_cam_02_final_hdf5, frame=0006
+  Match: ✓
+
+Sample 2:
+  Latent  [   55]: ai=ai_001_005, scene=scene_cam_02_final_hdf5, frame=0008
+  Encoder [   55]: ai=ai_001_005, scene=scene_cam_02_final_hdf5, frame=0008
+  Albedo  [   68]: ai=ai_001_005, scene=scene_cam_02_final_hdf5, frame=0008
+  Match: ✓
+
+Sample 3:
+  Latent  [    9]: ai=ai_001_005, scene=scene_cam_02_final_hdf5, frame=0010
+  Encoder [    9]: ai=ai_001_005, scene=scene_cam_02_final_hdf5, frame=0010
+  Albedo  [   44]: ai=ai_001_005, scene=scene_cam_02_final_hdf5, frame=0010
+  Match: ✓
+
+Sample 4:
+  Latent  [   58]: ai=ai_001_005, scene=scene_cam_02_final_hdf5, frame=0011
+  Encoder [   58]: ai=ai_001_005, scene=scene_cam_02_final_hdf5, frame=0011
+  Albedo  [   48]: ai=ai_001_005, scene=scene_cam_02_final_hdf5, frame=0011
+  Match: ✓
+Found 67156 images/latents for training
+Found 7462 images/latents for validation
+Found 67156 images for encoder training
+Found 7462 images for encoder validation
+Found 67156 albedo images for training
+Found 7462 albedo images for validation
+Loading checkpoint from /home/project/ldr_image_to_ldr_shading/LDR_image_to_LDR_shading_hyperism/train_vae_shubam/ldr_to_sh_flow/epoch_16_flow_model_ckpt.pth
+Resuming from epoch 16 with best val loss: 2.7576
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:07<00:00,  3.14it/s]
+Finished epoch:17 | Average Training Loss: 2.6127
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:29<00:00,  7.87it/s]
+Validation Loss: 2.7251
+Saved best model with validation loss: 2.7251
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:31<00:00,  3.03it/s]
+Finished epoch:18 | Average Training Loss: 2.5943
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.16it/s]
+Validation Loss: 2.7206
+Saved best model with validation loss: 2.7206
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:19 | Average Training Loss: 2.5846
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.12it/s]
+Validation Loss: 2.7093
+Saved best model with validation loss: 2.7093
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:20 | Average Training Loss: 2.5671
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.27it/s]
+Validation Loss: 2.6736
+Saved best model with validation loss: 2.6736
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:21 | Average Training Loss: 2.5475
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.6901
+Validation did not improve. Patience: 1/10
+Saved best model with validation loss: 2.6901
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:22 | Average Training Loss: 2.5473
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.6823
+Saved best model with validation loss: 2.6823
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:23 | Average Training Loss: 2.5352
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.6812
+Saved best model with validation loss: 2.6812
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:24 | Average Training Loss: 2.5279
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.27it/s]
+Validation Loss: 2.6544
+Saved best model with validation loss: 2.6544
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:25 | Average Training Loss: 2.5139
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.6576
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:26 | Average Training Loss: 2.5059
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.6624
+Validation did not improve. Patience: 2/10
+Saved best model with validation loss: 2.6624
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:27 | Average Training Loss: 2.4967
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.6492
+Saved best model with validation loss: 2.6492
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:28 | Average Training Loss: 2.4863
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.6382
+Saved best model with validation loss: 2.6382
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:29 | Average Training Loss: 2.4829
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.6101
+Saved best model with validation loss: 2.6101
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:30 | Average Training Loss: 2.4734
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.6342
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:31 | Average Training Loss: 2.4666
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.6184
+Validation did not improve. Patience: 2/10
+Saved best model with validation loss: 2.6184
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:32 | Average Training Loss: 2.4577
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.5981
+Saved best model with validation loss: 2.5981
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:33 | Average Training Loss: 2.4524
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.6110
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.06it/s]
+Finished epoch:34 | Average Training Loss: 2.4458
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.5828
+Saved best model with validation loss: 2.5828
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:35 | Average Training Loss: 2.4373
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.5987
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:36 | Average Training Loss: 2.4329
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.24it/s]
+Validation Loss: 2.5922
+Validation did not improve. Patience: 2/10
+Saved best model with validation loss: 2.5922
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:37 | Average Training Loss: 2.4265
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.6102
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:38 | Average Training Loss: 2.4203
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.5771
+Saved best model with validation loss: 2.5771
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:39 | Average Training Loss: 2.4144
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.5722
+Saved best model with validation loss: 2.5722
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:40 | Average Training Loss: 2.4109
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.5837
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:41 | Average Training Loss: 2.4048
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.5685
+Saved best model with validation loss: 2.5685
+Saved best model with validation loss: 2.5685
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:42 | Average Training Loss: 2.4025
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.5537
+Saved best model with validation loss: 2.5537
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:43 | Average Training Loss: 2.4011
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.5719
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:44 | Average Training Loss: 2.3912
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.5844
+Validation did not improve. Patience: 2/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:45 | Average Training Loss: 2.3880
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.5994
+Validation did not improve. Patience: 3/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:46 | Average Training Loss: 2.3824
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.5633
+Validation did not improve. Patience: 4/10
+Saved best model with validation loss: 2.5633
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:47 | Average Training Loss: 2.3789
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.5499
+Saved best model with validation loss: 2.5499
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:48 | Average Training Loss: 2.3717
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.5615
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:49 | Average Training Loss: 2.3693
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.5335
+Saved best model with validation loss: 2.5335
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:50 | Average Training Loss: 2.3675
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.5393
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:51 | Average Training Loss: 2.3638
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.5403
+Validation did not improve. Patience: 2/10
+Saved best model with validation loss: 2.5403
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:52 | Average Training Loss: 2.3603
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.5553
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:53 | Average Training Loss: 2.3511
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.5302
+Saved best model with validation loss: 2.5302
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:54 | Average Training Loss: 2.3481
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.5425
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:55 | Average Training Loss: 2.3482
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.5617
+Validation did not improve. Patience: 2/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:56 | Average Training Loss: 2.3462
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.5141
+Saved best model with validation loss: 2.5141
+Saved best model with validation loss: 2.5141
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:57 | Average Training Loss: 2.3408
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.5141
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:58 | Average Training Loss: 2.3349
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.5147
+Validation did not improve. Patience: 2/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:59 | Average Training Loss: 2.3348
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.5026
+Saved best model with validation loss: 2.5026
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:60 | Average Training Loss: 2.3323
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.5297
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:61 | Average Training Loss: 2.3261
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.5051
+Validation did not improve. Patience: 2/10
+Saved best model with validation loss: 2.5051
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:62 | Average Training Loss: 2.3246
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.5062
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:63 | Average Training Loss: 2.3239
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.5210
+Validation did not improve. Patience: 2/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:64 | Average Training Loss: 2.3185
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.5132
+Validation did not improve. Patience: 3/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:65 | Average Training Loss: 2.3123
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.5127
+Validation did not improve. Patience: 4/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:66 | Average Training Loss: 2.2908
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.4749
+Saved best model with validation loss: 2.4749
+Saved best model with validation loss: 2.4749
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.06it/s]
+Finished epoch:67 | Average Training Loss: 2.2780
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.4819
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:68 | Average Training Loss: 2.2737
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.4829
+Validation did not improve. Patience: 2/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:69 | Average Training Loss: 2.2667
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.4656
+Saved best model with validation loss: 2.4656
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:70 | Average Training Loss: 2.2630
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.4681
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:71 | Average Training Loss: 2.2597
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.4449
+Saved best model with validation loss: 2.4449
+Saved best model with validation loss: 2.4449
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:72 | Average Training Loss: 2.2565
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.4650
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:73 | Average Training Loss: 2.2546
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.4660
+Validation did not improve. Patience: 2/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:74 | Average Training Loss: 2.2533
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.4817
+Validation did not improve. Patience: 3/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:75 | Average Training Loss: 2.2493
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.4554
+Validation did not improve. Patience: 4/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:76 | Average Training Loss: 2.2459
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.4616
+Validation did not improve. Patience: 5/10
+Saved best model with validation loss: 2.4616
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:77 | Average Training Loss: 2.2431
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.4644
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:78 | Average Training Loss: 2.2363
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.27it/s]
+Validation Loss: 2.4311
+Saved best model with validation loss: 2.4311
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:79 | Average Training Loss: 2.2278
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.4104
+Saved best model with validation loss: 2.4104
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:80 | Average Training Loss: 2.2237
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.27it/s]
+Validation Loss: 2.4243
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:81 | Average Training Loss: 2.2200
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.4151
+Validation did not improve. Patience: 2/10
+Saved best model with validation loss: 2.4151
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:82 | Average Training Loss: 2.2172
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.4226
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:83 | Average Training Loss: 2.2172
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.4137
+Saved best model with validation loss: 2.4137
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:84 | Average Training Loss: 2.2107
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.4091
+Saved best model with validation loss: 2.4091
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:85 | Average Training Loss: 2.2129
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.27it/s]
+Validation Loss: 2.4177
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:86 | Average Training Loss: 2.2113
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.4164
+Validation did not improve. Patience: 2/10
+Saved best model with validation loss: 2.4164
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:87 | Average Training Loss: 2.2089
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.27it/s]
+Validation Loss: 2.4140
+Saved best model with validation loss: 2.4140
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:88 | Average Training Loss: 2.2085
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.4224
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:89 | Average Training Loss: 2.2046
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.4354
+Validation did not improve. Patience: 2/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:90 | Average Training Loss: 2.2043
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.4330
+Validation did not improve. Patience: 3/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:91 | Average Training Loss: 2.2000
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.27it/s]
+Validation Loss: 2.4121
+Saved best model with validation loss: 2.4121
+Saved best model with validation loss: 2.4121
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:92 | Average Training Loss: 2.1969
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3980
+Saved best model with validation loss: 2.3980
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:93 | Average Training Loss: 2.1948
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3944
+Saved best model with validation loss: 2.3944
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:94 | Average Training Loss: 2.1929
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.4023
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:95 | Average Training Loss: 2.1922
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.4016
+Validation did not improve. Patience: 2/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:96 | Average Training Loss: 2.1913
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3988
+Validation did not improve. Patience: 3/10
+Saved best model with validation loss: 2.3988
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:97 | Average Training Loss: 2.1910
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.4146
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:98 | Average Training Loss: 2.1893
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3966
+Saved best model with validation loss: 2.3966
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:99 | Average Training Loss: 2.1859
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.4159
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:100 | Average Training Loss: 2.1871
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3995
+Validation did not improve. Patience: 2/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:101 | Average Training Loss: 2.1841
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3967
+Validation did not improve. Patience: 3/10
+Saved best model with validation loss: 2.3967
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:102 | Average Training Loss: 2.1808
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.4016
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:103 | Average Training Loss: 2.1808
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3844
+Saved best model with validation loss: 2.3844
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:104 | Average Training Loss: 2.1793
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.27it/s]
+Validation Loss: 2.3858
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:105 | Average Training Loss: 2.1811
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3973
+Validation did not improve. Patience: 2/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:106 | Average Training Loss: 2.1798
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.4072
+Validation did not improve. Patience: 3/10
+Saved best model with validation loss: 2.4072
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:107 | Average Training Loss: 2.1783
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3828
+Saved best model with validation loss: 2.3828
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:108 | Average Training Loss: 2.1800
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.27it/s]
+Validation Loss: 2.3954
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:109 | Average Training Loss: 2.1781
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3848
+Validation did not improve. Patience: 2/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:110 | Average Training Loss: 2.1752
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3892
+Validation did not improve. Patience: 3/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:111 | Average Training Loss: 2.1751
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3921
+Validation did not improve. Patience: 4/10
+Saved best model with validation loss: 2.3921
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:112 | Average Training Loss: 2.1769
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3848
+Saved best model with validation loss: 2.3848
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:113 | Average Training Loss: 2.1750
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3927
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.06it/s]
+Finished epoch:114 | Average Training Loss: 2.1735
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3708
+Saved best model with validation loss: 2.3708
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:115 | Average Training Loss: 2.1738
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.22it/s]
+Validation Loss: 2.3887
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:116 | Average Training Loss: 2.1723
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3964
+Validation did not improve. Patience: 2/10
+Saved best model with validation loss: 2.3964
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:117 | Average Training Loss: 2.1715
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3734
+Saved best model with validation loss: 2.3734
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:118 | Average Training Loss: 2.1734
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3874
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:119 | Average Training Loss: 2.1702
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3893
+Validation did not improve. Patience: 2/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.06it/s]
+Finished epoch:120 | Average Training Loss: 2.1728
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3836
+Validation did not improve. Patience: 3/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:121 | Average Training Loss: 2.1721
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.27it/s]
+Validation Loss: 2.3831
+Validation did not improve. Patience: 4/10
+Saved best model with validation loss: 2.3831
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:122 | Average Training Loss: 2.1708
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3760
+Saved best model with validation loss: 2.3760
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:123 | Average Training Loss: 2.1718
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3713
+Saved best model with validation loss: 2.3713
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.06it/s]
+Finished epoch:124 | Average Training Loss: 2.1708
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3726
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:125 | Average Training Loss: 2.1716
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3813
+Validation did not improve. Patience: 2/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:126 | Average Training Loss: 2.1708
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3737
+Validation did not improve. Patience: 3/10
+Saved best model with validation loss: 2.3737
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:127 | Average Training Loss: 2.1701
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3760
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:128 | Average Training Loss: 2.1692
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3741
+Validation did not improve. Patience: 2/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:129 | Average Training Loss: 2.1701
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3728
+Saved best model with validation loss: 2.3728
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:130 | Average Training Loss: 2.1677
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3768
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:131 | Average Training Loss: 2.1696
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3698
+Saved best model with validation loss: 2.3698
+Saved best model with validation loss: 2.3698
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:132 | Average Training Loss: 2.1699
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3649
+Saved best model with validation loss: 2.3649
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:133 | Average Training Loss: 2.1671
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3733
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.06it/s]
+Finished epoch:134 | Average Training Loss: 2.1706
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3716
+Validation did not improve. Patience: 2/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:135 | Average Training Loss: 2.1703
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3813
+Validation did not improve. Patience: 3/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:136 | Average Training Loss: 2.1688
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3765
+Validation did not improve. Patience: 4/10
+Saved best model with validation loss: 2.3765
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:137 | Average Training Loss: 2.1696
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3776
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:138 | Average Training Loss: 2.1695
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3816
+Validation did not improve. Patience: 2/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:139 | Average Training Loss: 2.1686
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3697
+Saved best model with validation loss: 2.3697
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:140 | Average Training Loss: 2.1708
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3784
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:141 | Average Training Loss: 2.1681
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3704
+Validation did not improve. Patience: 2/10
+Saved best model with validation loss: 2.3704
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:142 | Average Training Loss: 2.1694
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3756
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:143 | Average Training Loss: 2.1687
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3745
+Validation did not improve. Patience: 2/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:144 | Average Training Loss: 2.1680
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3831
+Validation did not improve. Patience: 3/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:145 | Average Training Loss: 2.1706
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3717
+Validation did not improve. Patience: 4/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:146 | Average Training Loss: 2.1697
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3613
+Saved best model with validation loss: 2.3613
+Saved best model with validation loss: 2.3613
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:147 | Average Training Loss: 2.1698
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3703
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:148 | Average Training Loss: 2.1704
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3834
+Validation did not improve. Patience: 2/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:149 | Average Training Loss: 2.1697
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3644
+Validation did not improve. Patience: 3/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:150 | Average Training Loss: 2.1679
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3651
+Validation did not improve. Patience: 4/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:151 | Average Training Loss: 2.1680
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3566
+Saved best model with validation loss: 2.3566
+Saved best model with validation loss: 2.3566
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:152 | Average Training Loss: 2.1700
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3609
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:153 | Average Training Loss: 2.1685
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3789
+Validation did not improve. Patience: 2/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:154 | Average Training Loss: 2.1683
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3827
+Validation did not improve. Patience: 3/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:155 | Average Training Loss: 2.1694
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3748
+Validation did not improve. Patience: 4/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:156 | Average Training Loss: 2.1678
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3710
+Validation did not improve. Patience: 5/10
+Saved best model with validation loss: 2.3710
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:157 | Average Training Loss: 2.1679
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3687
+Saved best model with validation loss: 2.3687
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:158 | Average Training Loss: 2.1671
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3661
+Saved best model with validation loss: 2.3661
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:159 | Average Training Loss: 2.1691
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3686
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:160 | Average Training Loss: 2.1674
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3500
+Saved best model with validation loss: 2.3500
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:161 | Average Training Loss: 2.1681
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3677
+Validation did not improve. Patience: 1/10
+Saved best model with validation loss: 2.3677
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:162 | Average Training Loss: 2.1677
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3694
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:163 | Average Training Loss: 2.1689
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3698
+Validation did not improve. Patience: 2/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:164 | Average Training Loss: 2.1691
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3747
+Validation did not improve. Patience: 3/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:165 | Average Training Loss: 2.1679
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3663
+Saved best model with validation loss: 2.3663
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:166 | Average Training Loss: 2.1672
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3522
+Saved best model with validation loss: 2.3522
+Saved best model with validation loss: 2.3522
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:167 | Average Training Loss: 2.1709
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3527
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:168 | Average Training Loss: 2.1681
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3597
+Validation did not improve. Patience: 2/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:169 | Average Training Loss: 2.1692
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3652
+Validation did not improve. Patience: 3/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:170 | Average Training Loss: 2.1684
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3590
+Validation did not improve. Patience: 4/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:171 | Average Training Loss: 2.1689
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3604
+Validation did not improve. Patience: 5/10
+Saved best model with validation loss: 2.3604
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:172 | Average Training Loss: 2.1675
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3702
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:173 | Average Training Loss: 2.1695
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3639
+Validation did not improve. Patience: 2/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:174 | Average Training Loss: 2.1696
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3750
+Validation did not improve. Patience: 3/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:175 | Average Training Loss: 2.1677
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3814
+Validation did not improve. Patience: 4/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:176 | Average Training Loss: 2.1693
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3545
+Saved best model with validation loss: 2.3545
+Saved best model with validation loss: 2.3545
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:177 | Average Training Loss: 2.1680
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3733
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:178 | Average Training Loss: 2.1685
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3636
+Validation did not improve. Patience: 2/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:179 | Average Training Loss: 2.1678
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3648
+Validation did not improve. Patience: 3/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:180 | Average Training Loss: 2.1680
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3631
+Validation did not improve. Patience: 4/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:181 | Average Training Loss: 2.1689
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3600
+Validation did not improve. Patience: 5/10
+Saved best model with validation loss: 2.3600
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:182 | Average Training Loss: 2.1679
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.24it/s]
+Validation Loss: 2.3712
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:183 | Average Training Loss: 2.1671
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3664
+Validation did not improve. Patience: 2/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:184 | Average Training Loss: 2.1685
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3627
+Validation did not improve. Patience: 3/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:185 | Average Training Loss: 2.1685
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3639
+Validation did not improve. Patience: 4/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:186 | Average Training Loss: 2.1694
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3618
+Validation did not improve. Patience: 5/10
+Saved best model with validation loss: 2.3618
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:187 | Average Training Loss: 2.1688
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3576
+Saved best model with validation loss: 2.3576
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:188 | Average Training Loss: 2.1667
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.16it/s]
+Validation Loss: 2.3555
+Saved best model with validation loss: 2.3555
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:189 | Average Training Loss: 2.1681
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3536
+Saved best model with validation loss: 2.3536
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:190 | Average Training Loss: 2.1698
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3618
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:191 | Average Training Loss: 2.1679
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3664
+Validation did not improve. Patience: 2/10
+Saved best model with validation loss: 2.3664
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:192 | Average Training Loss: 2.1689
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3545
+Saved best model with validation loss: 2.3545
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:193 | Average Training Loss: 2.1700
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3622
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:194 | Average Training Loss: 2.1715
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3627
+Validation did not improve. Patience: 2/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:195 | Average Training Loss: 2.1683
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3744
+Validation did not improve. Patience: 3/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:196 | Average Training Loss: 2.1679
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3779
+Validation did not improve. Patience: 4/10
+Saved best model with validation loss: 2.3779
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:197 | Average Training Loss: 2.1695
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3583
+Saved best model with validation loss: 2.3583
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:198 | Average Training Loss: 2.1691
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3607
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:199 | Average Training Loss: 2.1695
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3646
+Validation did not improve. Patience: 2/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:200 | Average Training Loss: 2.1681
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3677
+Validation did not improve. Patience: 3/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:201 | Average Training Loss: 2.1688
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3689
+Validation did not improve. Patience: 4/10
+Saved best model with validation loss: 2.3689
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:202 | Average Training Loss: 2.1681
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3761
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:203 | Average Training Loss: 2.1672
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3684
+Saved best model with validation loss: 2.3684
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:26<00:00,  3.06it/s]
+Finished epoch:204 | Average Training Loss: 2.1676
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.25it/s]
+Validation Loss: 2.3569
+Saved best model with validation loss: 2.3569
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:28<00:00,  3.05it/s]
+Finished epoch:205 | Average Training Loss: 2.1692
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3663
+Validation did not improve. Patience: 1/10
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2099/2099 [11:27<00:00,  3.05it/s]
+Finished epoch:206 | Average Training Loss: 2.1678
+Validation: 100%|██████████████████████████████████████████████████████████████████████████████████████| 233/233 [00:28<00:00,  8.26it/s]
+Validation Loss: 2.3629
+Validation did not improve. Patience: 2/10
+Saved best model with validation loss: 2.3629
+Saved checkpoint to ldr_to_sh_flow/flow_model_ckpt.pth
+ 11%|██████████▎                                                                                      | 222/2099 [01:13<10:20,  3.03it/s]
+Traceback (most recent call last):
+  File "/home/project/ldr_image_to_ldr_shading/LDR_image_to_LDR_shading_hyperism/train_vae_shubam/lpips_flow.py", line 885, in <module>
+    train(args)
+  File "/home/project/ldr_image_to_ldr_shading/LDR_image_to_LDR_shading_hyperism/train_vae_shubam/lpips_flow.py", line 641, in train
+    scaler.step(optimizer_model)
+  File "/home/project/anaconda3/envs/model/lib/python3.11/site-packages/torch/amp/grad_scaler.py", line 461, in step
+    retval = self._maybe_opt_step(optimizer, optimizer_state, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/project/anaconda3/envs/model/lib/python3.11/site-packages/torch/amp/grad_scaler.py", line 355, in _maybe_opt_step
+    if not sum(v.item() for v in optimizer_state["found_inf_per_device"].values()):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/project/anaconda3/envs/model/lib/python3.11/site-packages/torch/amp/grad_scaler.py", line 355, in <genexpr>
+    if not sum(v.item() for v in optimizer_state["found_inf_per_device"].values()):
+               ^^^^^^^^
+KeyboardInterrupt

@@ -1,0 +1,87 @@
+flow_params:
+  num_timesteps : 50
+  beta_start : 0.0015
+  beta_end : 0.0195
+
+dataset_params:
+  im_path: '/home/project/dataset/Hyperism/hyperism_ldr_albedo_ground_truth_256'
+  im_channels : 1
+  im_size : 256
+  name: 'ldr_to_sh_flow'
+
+albedo_params:
+  im_path: '/media/big_zone/mithlesh/dataset/Hyperism/hyperism_ldr_albedo_ground_truth'
+  im_channels : 3
+  im_size : 256
+  name: 'ldr_to_sh_flow'
+
+dataset_params_input:
+  im_path: '/home/project/dataset/Hyperism/hyperism_ldr_dequantize_linearize_256'
+  im_channels :  3
+  im_size : 256
+  name: 'ldr_to_sh_flow'
+
+ldm_params:
+  down_channels: [256,256,384]
+  mid_channels: [384,384]
+  down_sample: [True,False]
+  attn_down : [True,True]
+  time_emb_dim: 128
+  norm_channels : 32
+  num_heads : 16
+  conv_out_channels : 256
+  num_down_layers: 1
+  num_mid_layers: 1
+  num_up_layers: 1
+
+encoder_params:
+  down_channels:  [64,128,128,256,256,384] 
+  mid_channels: [384,384] # Starting with 32 channels, ending with 256
+  down_sample: [True, True, True,True,False]    # Downsampling on first 3 transitions
+  num_down_layers: 1               # Number of layers in each DownBlock
+  num_mid_layers: 1                # Number of layers in each MidBlock
+  attn_down: [False,False,False,False,False]     # Attention in second and third DownBlocks
+  norm_channels: 16                 # Normalization channels
+  num_heads: 16                       # Number of attention heads 
+
+autoencoder_params:
+  z_channels: 16
+  down_channels : [32, 64, 128, 256, 256]
+  mid_channels : [256, 256, 256, 256]
+  down_sample : [True, True, True, False]
+  attn_down : [True, True, True, True]
+  norm_channels: 32
+  num_heads: 16
+  num_down_layers : 4
+  num_mid_layers : 4
+  num_up_layers : 4
+
+
+train_params:
+  im_size_lt : 32
+  seed : 107
+  task_name: 'ldr_to_sh_flow'
+  ldm_batch_size: 64
+  autoencoder_batch_size: 64
+  disc_start: 31500
+  disc_weight: 0.25
+  perceptual_weight: 1
+  kl_weight: 0.005
+  gradient_weight: 0
+  ldm_epochs : 1000
+  autoencoder_epochs : 2000
+  num_samples : 25
+  ldm_lr: 0.0001
+  albedo_weight : 1
+  shading_weight : 0
+  autoencoder_lr: 0.0001
+  discriminator_lr: 0.00005
+  autoencoder_acc_steps : 1
+  autoencoder_img_save_steps : 1049
+  save_latents : False
+  vae_latent_dir_name : 'latent_output/latent_vectors.h5'
+  ldm_ckpt_name: 'flow_model_ckpt.pth'
+  vae_autoencoder_ckpt_name: 'epoch_41_best_autoencoder_model_checkpoint.pth'
+  vae_discriminator_ckpt_name: 'vae_discriminator_ckpt.pth'  
+  encoder_ckpt_name: 'encoder_ckpt.pth'  
+  ldm_optimizer_ckpt_name: 'ldm_optimizer_ckpt.pth'  
