@@ -5,7 +5,7 @@ import os
 import re
 import numpy as np
 from tqdm import tqdm
-from vae import VAE
+from models.vae import VAE
 from PIL import Image
 import h5py
 from torch.utils.data import DataLoader, Dataset

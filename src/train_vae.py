@@ -7,22 +7,16 @@ import random
 import os
 import numpy as np
 from tqdm import tqdm
-from vae import VAE
+from models.vae import VAE
 from torch.utils.data.dataloader import DataLoader
 from torch.optim import Adam
-from torch.utils.data import random_split
-from discriminator import Discriminator
-import imageio.v3 as iio
+from models.discriminator import Discriminator
 import lpips
 import gc
-#import time
-import OpenEXR
-import Imath
 import torchvision.utils as vutils
 
-
 # Add this at the top of your script, before importing imageio
-from dataloader_image_hyperism import ImageDataset,ImageDataset_d
+from dataloader_image_hyperism import ImageDataset
 os.environ["OPENCV_IO_ENABLE_OPENEXR"] = "1"
 #print("imported all the libraries")
 import torch

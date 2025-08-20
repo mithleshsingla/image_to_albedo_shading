@@ -697,8 +697,8 @@ def main_with_processed_images(args):
     print("Loading models...")
     
     # Initialize models (same as your existing code)
-    from vae import VAE
-    from unet_img_my import Unet, Encoder
+    from models.vae import VAE
+    from models.unet import Unet, Encoder
     
     vae = VAE(latent_dim=16).to(device)
     vae.eval()

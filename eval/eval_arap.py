@@ -13,8 +13,8 @@ from collections import OrderedDict
 from flow_matching.solver import ODESolver
 from flow_matching.utils import ModelWrapper
 import torchvision.utils as vutils
-from unet_img_my import Unet
-from unet_img_my import Encoder
+from models.unet import Unet
+from models.unet import Encoder
 from skimage.metrics import structural_similarity as ssim
 from skimage.filters import sobel
 import cv2
