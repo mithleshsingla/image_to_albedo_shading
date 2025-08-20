@@ -1,0 +1,3 @@
+Latent dimensions: (16, 32, 32)
+Number of samples: 74618
+Directory structure: /home/project/dataset/Hyperism/hyperism_ldr_albedo_ground_truth_256/ai_XXX_XXX/images/scene_cam_XX_final_hdf5/frame.XXXX.diffuse_reflectance.exr
