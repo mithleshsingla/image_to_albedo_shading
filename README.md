@@ -1,7 +1,120 @@
-# Intrinsic Image Decomposition with VAE + Flow Matching
+# Image Decomposition into Albedo and Shading via Latent Flow Matching
 
-This repository contains my implementation for **Intrinsic Image Decomposition (IID)** using a **Variational Autoencoder (VAE)** combined with a **Flow Matching Network**.  
-The system learns to disentangle input images into **albedo** and **shading**, while training in a lightweight but effective latent space.
+This repository implements **image intrinsic decomposition** — splitting an input image into **albedo** (reflectance) and **shading** components — using a combination of **Variational Autoencoder (VAE)** and **Latent Flow Matching**.  
+
+We train on the **Hypersim dataset** (indoor synthetic scenes) and evaluate on the **ARAP** and **SAW** datasets.  
+
+<p align="center">
+  <img src="docs/model_architecture.png" width="600"/>
+</p>  
+
+---
+
+## 🔹 What is Flow Matching?
+
+**Flow Matching** is a generative modeling technique that learns to **transform a simple prior distribution (e.g., Gaussian) into a complex data distribution** by solving an Ordinary Differential Equation (ODE).  
+
+Instead of iteratively denoising (like diffusion models), flow matching directly learns a **velocity field** that tells us how to move particles in latent space toward realistic samples.  
+
+<p align="center">
+  <img src="docs/flow_matching.png" width="600"/>
+</p>  
+
+
+In this project:  
+- We first compress albedo images using a **VAE** into latent space.  
+- Then, we train a **UNet-based flow matching network** on these latents.  
+- We pass our input image to **Encder** that pass features from last **3** layers to **Unet** network.
+- Then we aply **Euler's** formula on our model output **(velocity)** to get latent representation.
+- We pass our latent representation through decoder to get output **Albedo** image.
+- Then we divide our **Albedo** image with input image to get **Shading** component.
+
+---
+
+## 🔹 Dataset Preprocessing
+
+1. **Download Hypersim dataset**  
+   - Extract **albedo** and **HDR** images.  
+2. **Tonemap HDR → LDR** (without gamma correction).  
+3. **Normalize** to range [0, 1].  
+4. **Compute shading ground truth**:  
+  **$\text{Shading} = \frac{\text{LDR}}{\text{Albedo}}$**
+5. Final ground truth images:  
+   - Albedo  
+   - Shading  
+   - LDR input image  
+
+---
+
+## 📖 Method Overview
+
+### 🔹 Variational Autoencoder (VAE)
+- Trained on **albedo** images resized to **256×256×3**.  
+- Latent space: **12 × 32 × 32**.  
+- Loss function combines pixel-wise, perceptual, KL divergence, and adversarial terms.  
+- VAE is trained for **41 epochs**.
+
+#### Loss Functions
+
+* **Reconstruction (L2) loss:**
+
+  $$
+  \mathcal{L}_{\text{L2}} = \|x - \hat{x}\|_2^2
+  $$
+
+* **Perceptual (feature) loss:** using a fixed feature extractor $\phi$ (e.g., VGG)
+
+  $$
+  \mathcal{L}_{\text{perc}} = \|\phi(x) - \phi(\hat{x})\|_2^2
+  $$
+
+* **Kullback–Leibler divergence:** with prior $p(z) = \mathcal{N}(0, I)$ and posterior $q_\phi(z \mid x)$
+
+  $$
+  \mathcal{L}_{\text{KL}} = D_{\text{KL}}\left(q_\phi(z \mid x)\,\|\,p(z)\right)
+  $$
+
+* **Adversarial (generator) loss** (non-saturating GAN form for generator):
+
+  $$
+  \mathcal{L}_{\text{GAN}} = -\,\mathbb{E}_{x}\left[\log D(\hat{x})\right]
+  $$
+
+* **Total VAE objective (with your weights):**
+
+  $$
+  \mathcal{L}_{\text{VAE}} = 1 \cdot \mathcal{L}_{\text{L2}} + 1 \cdot \mathcal{L}_{\text{perc}} + 0.005 \cdot \mathcal{L}_{\text{KL}} + 0.1 \cdot \mathcal{L}_{\text{GAN}}
+  $$
+
+
+### Flow Matching Network
+- Based on **UNet + encoder features**
+- Trained on latent representation of size **12 × 32 × 32**.
+- ODE solved using **Euler method** with  just **2** timesteps
+
+#### Loss Functions
+
+**Flow Matching loss**:
+  
+$$
+\mathcal{L}_{\text{FM}} = \mathbb{E}_{t, z_t}\big[\,\|\,v_\theta(z_t, t) - v(z_t, t)\,\|_2^2\big]
+$$
+
+Additionally, decoded latents are compared with a **perceptual loss** as an auxiliary signal.
+
+**Euler solver step:** with step size $\Delta t$
+
+$$
+z_{k+1} = z_k + \Delta t\; v_\theta(z_k, t_k)
+$$
+
+**Latent reconstruction (implementation detail):**
+
+$$
+\hat z_t = x_t + (1 - t)\,\cdot\, v_\theta(x_t, t)
+$$
+
+(Implemented as `recon_pred_z = path_sample.x_t + (1.0 - t) * model_out`.)
 
 ---
 
