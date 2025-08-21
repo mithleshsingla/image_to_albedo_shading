@@ -71,18 +71,17 @@ In this project:
 \mathcal{L}_{\text{perc}} = \|\phi(x) - \phi(\hat{x})\|_2^2
 ```
 
-**Kullback–Leibler divergence** (with prior $p(z) = \mathcal{N}(0, I)$ and posterior $q_\phi(z \mid x)$):
+**Kullback–Leibler divergence** (with prior $p(z) = \mathcal{N}(0, I)$ and posterior $`q_\phi(z \mid x)`$):
 
 ```math
 \mathcal{L}_{\text{KL}} = D_{\text{KL}}\left(q_\phi(z \mid x)\,\|\,p(z)\right)
 ```
 
-**Adversarial (generator) loss** (non-saturating GAN form for generator):
+**Adversarial (GAN) loss:**
 
 ```math
-\mathcal{L}_{\text{GAN}} = -\,\mathbb{E}_{x}\left[\log D(\hat{x})\right]
+\mathbb{E}_x [\log (D (x))] + \mathbb{E}_z [\log (1 - D (G (z)))]
 ```
-
 **Total VAE objective (with your weights):**
 
 ```math
