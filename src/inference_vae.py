@@ -148,7 +148,7 @@ def extract_latents(args):
     model = VAE(latent_dim=16).to(device)
 
     # Load the trained model weights
-    checkpoint_path = "checkpoints/epoch_41_best_autoencoder_model_checkpoint.pth"
+    checkpoint_path = "checkpoints\vae_model.pth"
     print(f"Loading model weights from {checkpoint_path}")
     checkpoint = torch.load(checkpoint_path, weights_only=False, map_location=device)
     model.load_state_dict(checkpoint['model_state_dict'])

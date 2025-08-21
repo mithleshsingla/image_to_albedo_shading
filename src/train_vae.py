@@ -377,7 +377,7 @@ def train(args):
     val_losses_history = []
     
     # Check if checkpoint exists and load it for resuming training
-    checkpoint_path = "checkpoints/epoch_41_best_autoencoder_model_checkpoint.pth"
+    checkpoint_path = "checkpoints\vae_model.pth"
     if os.path.exists(checkpoint_path):
         logging.info(f"Loading checkpoint from {checkpoint_path}")
         checkpoint = torch.load(checkpoint_path, weights_only=False)

@@ -70,7 +70,7 @@ def load_models(config, device):
     vae.eval()
     
     # Load VAE weights
-    vae_path ="checkpoints/epoch_41_best_autoencoder_model_checkpoint.pth"
+    vae_path ="checkpoints\vae_model.pth"
     if os.path.exists(vae_path):
         print(f'Loading VAE checkpoint from {vae_path}')
         checkpoint_vae = torch.load(vae_path, weights_only=False, map_location=device)

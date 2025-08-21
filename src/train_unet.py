@@ -406,7 +406,7 @@ def train(args):
     vae.eval()
   
     # Load vae if found
-    vae_path = "checkpoints/epoch_41_best_autoencoder_model_checkpoint.pth"
+    vae_path = "checkpoints\vae_model.pth"
     if os.path.exists(vae_path):
         print(f'Loading VAE checkpoint from {vae_path}')
         checkpoint_vae = torch.load(vae_path, weights_only=False, map_location=device)
@@ -525,7 +525,7 @@ def train(args):
     os.makedirs(train_config['task_name'], exist_ok=True)
 
     # Try to load existing checkpoints if available
-    checkpoint_path="checkpoints/epoch_191_flow_model_ckpt.pth"
+    checkpoint_path="checkpoints\unet_encoder_inference.pths"
 
     if os.path.exists(checkpoint_path):
         print(f"Loading checkpoint from {checkpoint_path}")
