@@ -71,18 +71,17 @@ In this project:
 \mathcal{L}_{\text{perc}} = \|\phi(x) - \phi(\hat{x})\|_2^2
 ```
 
-**Kullback–Leibler divergence** (with prior $p(z) = \mathcal{N}(0, I)$ and posterior $q_\phi(z \mid x)$):
+**Kullback–Leibler divergence** (with prior $p(z) = \mathcal{N}(0, I)$ and posterior $`q_\phi(z \mid x)`$):
 
 ```math
 \mathcal{L}_{\text{KL}} = D_{\text{KL}}\left(q_\phi(z \mid x)\,\|\,p(z)\right)
 ```
 
-**Adversarial (generator) loss** (non-saturating GAN form for generator):
+**Adversarial (GAN) loss:**
 
 ```math
-\mathcal{L}_{\text{GAN}} = -\,\mathbb{E}_{x}\left[\log D(\hat{x})\right]
+\mathbb{E}_x [\log (D (x))] + \mathbb{E}_z [\log (1 - D (G (z)))]
 ```
-
 **Total VAE objective (with your weights):**
 
 ```math
@@ -114,23 +113,101 @@ Additionally, decoded latents are compared with a **perceptual loss** as an auxi
 
 (Implemented as `recon_pred_z = path_sample.x_t + (1.0 - t) * model_out`.)
 
+
+---
+
+## 📊 Results
+
+### Validation Samples
+
+- **Input / Output**  
+
+| Image | Labels |
+|-------|--------|
+| <img src="results_during_validation/Model_input_output/40911.png" width="250"> | **Model Prediction** <br><br><br><br><br><br> **Ground Truth** <br><br><br><br><br><br> **Input Images** |
+
+- **Shading**
+  
+| Image | Labels |
+|-------|--------|
+| <img src="results_during_validation/Shading/1240320.png" width="250">|**Model Prediction** <br><br><br><br><br><br> **Ground Truth**|
+
+- **Albedo**
+
+  
+| Image | Labels |
+|-------|--------|
+| <img src="results_during_validation/albedo/429450.png" width="250">|**Model Prediction** <br><br><br><br><br><br> **Ground Truth**|
+
+---
+
+### Training Loss Plots
+- **VAE Loss Training**
+  <p align="center">
+    <img src="logs/train_vae_loss_plot.png" width="1000"/>
+    <img src="logs/discriminator_loss_plot.png" width="1000"/>
+  </p>
+- **VAE Loss Validation**
+  <p align="center">
+    <img src="logs/val_vae_loss_plot.png" width="1000"/>
+  </p>
+- **Flow matching Loss Training and Validation**
+  <p align="center">
+    <img src="logs/flow_matching_loss_plot.png" width="1000"/>
+  </p>
+---
+
+### ARAP Dataset Results
+  
+| Image | Labels |
+|-------|--------|
+| <img src="docs/arap_results/a_full_comparison.png" width="600"/>|**Ground Truth** <br><br><br><br><br><br> **Model Prediction**|
+
+
+**Evaluation on ARAP Dataset**
+
+| method | MSE     | RMSE    | LMSE    | SSIM   |
+|--------|---------|---------|---------|--------|
+| euler  | 0.0114  | 0.0945  | 0.0289  | 0.8919 |
+
+---
+
+### SAW Dataset Results
+
+| method | num_batches | MSE    | RMSE   | SSIM  |
+|--------|-------------|--------|--------|-------|
+| euler  | 1166        | 0.0775 | 0.2522 | 0.593 |
+
+
 ---
 
 ## 📂 Repository Structure
 ```
-├── data/                          # Dataset (HyperSim processed)
-├── docs/
-│   └── flow_matching.png           # Illustration of flow matching
-├── evaluation_results/
-│   ├── evaluation_result_arap.csv
-│   ├── evaluation_results_saw.csv
-├── logs/                           # Training logs + loss plots
-├── results_during_validation/
-│   ├── Model_input_output/
-│   ├── Shading/
-│   └── albedo/
-├── requirements.txt
-└── README.md
+├── README.md # Project overview
+├── requirements.txt # Python dependencies
+├── .gitattributes
+│
+├── checkpoints/ # Saved model weights
+│ ├── discriminator_model.pth
+│ ├── unet_encoder_inference.pth
+│ └── vae_model.pth
+│
+├── config/ # YAML configuration files
+│
+├── data_preprocessing/ # Data preprocessing utilities
+│
+├── docs/ # Documentation & figures
+│ ├── flow_matching.png
+│ ├── model_architecture.png
+│ └── arap_results/ # Example qualitative results
+│
+├── eval/ # Evaluation scripts
+├── evaluation_results/ # CSV evaluation metrics
+├── latent_output/
+├── logs/ # Training & validation logs
+├── models/ # Model architectures
+├── results_during_validation/ # Sample validation results
+└── src/ # Training & inference scripts
 ```
 
 ---
@@ -140,74 +217,34 @@ Clone the repo and install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
+---
+## 🔹 Usage
+
+### Train VAE
+```bash
+python src/train_vae.py --config config/autoen_alb.yaml
+```
+### Train Flow Matching
+```bash
+python src/train_unet.py --config config/unet_hyperism.yaml
+```
+### Inference
+```bash
+python src/inference_unet.py 
+```
+### Train Evaluation
+```bash
+python eval/eval_arap.py
+```
+```bash
+python eval/eval_saw.py
+```
 
 ---
-
-### 🔹 Flow Matching
-Flow matching is a method to learn **continuous-time dynamics** that transport samples from a prior (noise) distribution to the target data distribution.  
-Unlike diffusion models, which require stochastic sampling and many steps, flow matching directly trains a neural network to predict the **velocity field** of samples along the flow trajectory.
-
-<p align="center">
-  <img src="docs/flow_matching.png" width="500"/>
-</p>
-
-- U-Net + encoder used for flow prediction.  
-- Latent dynamics integrated using **Euler method (10 steps)**.  
-- Training loss: **flow matching objective** + **perceptual loss** after decoding.  
-- Trained for **200 epochs**.  
-
----
-
-## 📊 Results
-
-### Validation Samples
-- **Input / Output**  
-  <p><img src="results_during_validation/Model_input_output/36715.png" width="250"></p>
-
-- **Shading**  
-  <p><img src="results_during_validation/Shading/1228160.png" width="250"></p>
-
-- **Albedo**  
-  <p><img src="results_during_validation/albedo/425250.png" width="250"></p>
-
----
-
-### Training Loss Plots
-<p align="center">
-  <img src="logs/discriminator_loss_plot.png" width="300"/>
-  <img src="logs/flow_matching_loss_plot.png" width="300"/>
-</p>
-<p align="center">
-  <img src="logs/train_vae_loss_plot.png" width="300"/>
-  <img src="logs/val_vae_loss_plot.png" width="300"/>
-</p>
-
----
-
-### ARAP Dataset Results
-<p align="center">
-  <img src="docs/arap_results/a_full_comparison.png" width="600"/>
-</p>
-
-**Evaluation on ARAP Dataset**
-
-| guidance_scale | method | MSE     | RMSE    | LMSE    | SSIM   |
-|----------------|--------|---------|---------|---------|--------|
-| 1.0            | euler  | 0.0114  | 0.0945  | 0.0289  | 0.8919 |
-
----
-
-### SAW Dataset Results
-
-| guidance_scale | method | num_batches | MSE    | RMSE   | LMSE | SSIM  |
-|----------------|--------|-------------|--------|--------|------|-------|
-| 1.0            | euler  | 1166        | 0.0775 | 0.2522 | inf  | 0.593 |
-
----
-
-## 📌 Notes
+## 📌 Uniqueness
 - VAE: ~4M parameters  
 - Flow model: ~35M parameters  
-- Total inference model: ~37M params (**smaller than typical flow/diffusion models**)
+- Total inference model: ~37M params (**Much smaller than typical flow/diffusion models**)
+- Provides results for just 2 timesteps.
 
 ---
