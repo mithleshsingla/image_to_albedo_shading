@@ -156,7 +156,53 @@ Additionally, decoded latents are compared with a **perceptual loss** as an auxi
     <img src="logs/flow_matching_loss_plot.png" width="1000"/>
   </p>
 ---
+## 🌐 Live Demo
 
+Try our model directly in your browser! The model is deployed on **HuggingFace Spaces** with an interactive Gradio interface.
+
+### 🔗 **[Launch Demo](https://huggingface.co/spaces/Mithleshsingla/IID)**
+
+<div align="center">
+  
+[![Open in Spaces](https://huggingface.co/datasets/huggingface/badges/resolve/main/open-in-hf-spaces-lg.svg)](https://huggingface.co/spaces/Mithleshsingla/IID)
+
+</div>
+
+### 📱 Demo Features
+- **Fast Inference**: Get results in just 2-20 steps
+- **Interactive Controls**: Toggle between Flow Matching and VAE-only modes
+- **Real-time Processing**: Upload any image and see instant decomposition
+- **Professional UI**: Clean, responsive interface optimized for all devices
+
+### 🖼️ Demo Interface
+
+<div align="center">
+  
+**Main Interface**
+<p align="center">
+  <img src="docs/deploy_1.png" width="1000"/>
+</p>
+
+**Results Showcase**
+<p align="center">
+  <img src="docs/deploy_2.png" width="400"/>
+</p>
+
+</div>
+
+### 🚀 Quick Start with Demo
+1. **Visit**: [https://huggingface.co/spaces/Mithleshsingla/IID](https://huggingface.co/spaces/Mithleshsingla/IID)
+2. **Upload**: Any image (portraits, objects, scenes work best)
+3. **Configure**: Choose Flow Matching mode and adjust steps (10-20 recommended)
+4. **Generate**: Click "Generate Decomposition" and see results in seconds!
+
+### ⚙️ Model Deployment
+- **Platform**: HuggingFace Spaces
+- **Framework**: Gradio
+- **Model Size**: ~37M parameters total
+- **Inference Speed**: 2-20 timesteps
+
+---
 ### ARAP Dataset Results
   
 | Image | Labels |
