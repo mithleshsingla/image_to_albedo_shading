@@ -23,20 +23,6 @@ def strip_orig_mod(state_dict):
         new_state_dict[new_key] = v
     return new_state_dict
 
-def get_time_discretization(nfes: int, rho=7):
-    """Get time discretization for ODE solver"""
-    step_indices = torch.arange(nfes, dtype=torch.float64)
-    sigma_min = 0.002
-    sigma_max = 80.0
-    sigma_vec = (
-        sigma_max ** (1 / rho)
-        + step_indices / (nfes - 1) * (sigma_min ** (1 / rho) - sigma_max ** (1 / rho))
-    ) ** rho
-    sigma_vec = torch.cat([sigma_vec, torch.zeros_like(sigma_vec[:1])])
-    time_vec = (sigma_vec / (1 + sigma_vec)).squeeze()
-    t_samples = 1.0 - torch.clip(time_vec, min=0.0, max=1.0)
-    return t_samples
-
 class WrappedModel(ModelWrapper):
     def __init__(self, model, encoder=None):
         super().__init__(model)
@@ -57,7 +43,7 @@ def load_models(config, device):
     # Initialize models
     autoencoder_model_config = config['autoencoder_params']
     dataset_config = config['dataset_params_input']
-    train_config = config['train_params']
+    
     
     # Initialize encoder
     encoder = Encoder(im_channels=dataset_config['im_channels']).to(device)
@@ -146,7 +132,7 @@ def run_inference(model, encoder, vae, data_loader, config, output_dir, num_infe
     solver = ODESolver(velocity_model=wrapped_model)
     
     # Get time discretization for ODE solver
-    T = get_time_discretization(num_inference_steps, rho=7).to(device)
+    
     
     os.makedirs(output_dir, exist_ok=True)
     
@@ -170,10 +156,9 @@ def run_inference(model, encoder, vae, data_loader, config, output_dir, num_infe
             
             # Sample from the model
             samples = solver.sample(
-                time_grid=T,
                 x_init=x_init,
-                method='midpoint',
-                step_size=0.05,  # Smaller step size for better quality
+                method='euler',
+                step_size=0.5,  # Smaller step size for better quality
                 return_intermediates=False
             )
             
@@ -238,8 +223,6 @@ def run_single_image_inference(model, encoder, vae, condition_image_path, config
     wrapped_model = WrappedModel(model, encoder)
     solver = ODESolver(velocity_model=wrapped_model)
     
-    # Get time discretization
-    T = get_time_discretization(num_inference_steps, rho=7).to(device)
     
     with torch.no_grad():
         # Generate initial noise
@@ -255,10 +238,9 @@ def run_single_image_inference(model, encoder, vae, condition_image_path, config
         
         # Sample from the model
         samples = solver.sample(
-            time_grid=T,
             x_init=x_init,
-            method='midpoint',
-            step_size=0.05,
+            method='euler',
+            step_size=0.5,
             return_intermediates=False
         )
         

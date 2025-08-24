@@ -175,3 +175,7 @@ importlib_metadata==8.6.1
 nvidia-cufft-cu12==11.3.0.4
 namex==0.0.7
 kiwisolver==1.4.8
+gradio
+huggingface-hub
+numpy
+Pillow
